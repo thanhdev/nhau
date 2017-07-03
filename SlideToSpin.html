@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<title>Quay đều quay đều quay đều ...</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style type="text/css">
+	@media (max-width: 600px){
+		img {
+			margin-left: -15%;
+			width: 130% !important;
+		}
+		h2 {
+			margin-bottom: 20px;
+			font-size: 18px;
+		}
+	}
+</style>
+<body>
+
+	<h2 style="position: relative; z-index: 99;" class="w3-center">Vòng quay ăn nhậu</h2>
+	<center>
+	<div style="margin-top: -50px;" id="slider" onclick="spin()">
+		<img class="mySlides" src="1.png" style="width:50%">
+		<img class="mySlides" src="2.png" style="width:50%">
+		<img class="mySlides" src="3.png" style="width:50%">
+		<img class="mySlides" src="4.png" style="width:50%">
+		<img class="mySlides" src="5.png" style="width:50%">
+		<img class="mySlides" src="6.png" style="width:50%">
+		<img class="mySlides" src="7.png" style="width:50%">
+		<img class="mySlides" src="8.png" style="width:50%">
+		<img class="mySlides" src="9.png" style="width:50%">
+		<img class="mySlides" src="10.png" style="width:50%">
+		<img class="mySlides" src="11.png" style="width:50%">
+		<img class="mySlides" src="12.png" style="width:50%">
+		<img class="mySlides" src="13.png" style="width:50%">
+		<img class="mySlides" src="14.png" style="width:50%">
+		<img class="mySlides" src="15.png" style="width:50%">
+		<img class="mySlides" src="16.png" style="width:50%">
+		<!-- <img class="mySlides" src="img_forest.jpg" style="width:100%"> -->1
+		<!-- <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+		<button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button> -->
+	</div></center>
+
+	<script>
+		var slideIndex = 1;
+		var stop = 0;
+		showDivs(slideIndex);
+		carousel();
+
+		function carousel() {
+			if ( stop == 1){
+				return;
+			}
+		    var i;
+		    var x = document.getElementsByClassName("mySlides");
+		    for (i = 0; i < x.length; i++) {
+		      x[i].style.display = "none"; 
+		    }
+		    slideIndex++;
+		    if (slideIndex > x.length) {slideIndex = 1} 
+		    x[slideIndex-1].style.display = "block"; 
+		    setTimeout(carousel, 40); // Change image every 2 seconds
+		}
+		function spin(){
+			if (stop == 1) {
+				stop = 0;
+				carousel();
+			} 
+			else 
+				stop = 1;
+			showDivs(slideIndex);
+		}
+
+		function plusDivs(n) {
+			showDivs(slideIndex += n);
+		}
+
+		function showDivs(n) {
+			var i;
+			var x = document.getElementsByClassName("mySlides");
+			if (n > x.length) {slideIndex = 1}    
+				if (n < 1) {slideIndex = x.length}
+					for (i = 0; i < x.length; i++) {
+						x[i].style.display = "none";  
+					}
+					x[slideIndex-1].style.display = "block";  
+				}
+			</script>
+
+</body>
+</html>
